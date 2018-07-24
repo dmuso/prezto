@@ -16,10 +16,6 @@ fi
 
 export HOMEBREW_GITHUB_API_TOKEN=3789521a7271e8b4a66c42f6b74c42e908f17d0a
 
-# Chruby
-# source /usr/local/opt/chruby/share/chruby/chruby.sh
-# source /usr/local/opt/chruby/share/chruby/auto.sh
-
 # Go - http://golang.org
 export GOPATH=~/Documents/Code/go
 
@@ -32,47 +28,13 @@ export PATH=/usr/local/bin:/usr/local/opt/openssl/bin:$PATH:$GOPATH/bin:/Users/d
 # Use Sublime Text as editor
 # export EDITOR='subl -w'
 export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/vim"
 
-# AWS CLI
-# source /usr/local/share/zsh/site-functions/_aws
-# export AWS_CLI=/usr/local/bin/aws
-# export AWS_DEFAULT_REGION=ap-southeast-2
-# export IDP_USER=dan.harper
-# export IDP_HOST=idp.mycomp.com.au
-# export AWS_DEFAULT_ROLE=non-prod-roles-Developer-UXUA3R23RE45
-# source ~/Documents/Code/saml-aws-functions/bash-functions
-# source ~/Documents/Code/bash-my-aws/autoscaling-functions
-# source ~/Documents/Code/bash-my-aws/cloudformation-functions
-# source ~/Documents/Code/bash-my-aws/cloudformation-single-instance-asg-functions
-# source ~/Documents/Code/bash-my-aws/ec2-functions
-
-# Docker
-#export DOCKER_TLS_VERIFY="1"
-#export DOCKER_HOST="tcp://127.0.0.1:2376"
-#export DOCKER_CERT_PATH="/Users/dharper/.docker/machine/machines/dockervm"
-#export DOCKER_MACHINE_NAME="dockervm"
-#export DOCKER_TLS_VERIFY="1"
-#export DOCKER_HOST="tcp://192.168.99.100:2376"
-#export DOCKER_CERT_PATH="/Users/dharper/.docker/machine/machines/dockervm"
-#export DOCKER_MACHINE_NAME="dockervm"
 function fig() {
   docker-compose "$@" 2> >(grep InsecurePlatform -v)
 }
-#alias docker="docker --tlsverify=false"
-
 
 # ondir configuration
-# cd() {
-#   builtin cd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-# }
-# pushd() {
-#   builtin pushd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-# }
-# popd() {
-#   builtin popd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-# }
-# eval "`ondir /`"
-
 eval_ondir() {
   eval "`ondir \"$OLDPWD\" \"$PWD\"`"
 }
